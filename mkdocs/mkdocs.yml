@@ -1,0 +1,78 @@
+site_name: Site Name
+site_url: https://github.com/<username>/<repo-name>
+site_description: Site Description
+strict: true
+theme:
+  name: material # uses mkdocs-material theme
+
+  favicon: assets/favicon.ico
+  logo: assets/logo.png
+
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/lightbulb
+        name: Switch to dark mode
+      primary: light blue
+      accent: purple
+
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/lightbulb-outline
+        name: Switch to light mode
+      primary: black
+      accent: purple
+
+  font:
+    text: "Archivo"
+  features:
+    - navigation.indexes
+    - navigation.top
+    - toc.follow
+    - content.code.copy
+    - content.code.annotate
+    - search.suggest
+    - search.highlight
+    - search.share
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - tables
+  - toc:
+      permalink: true
+plugins:
+  - search
+  - git-revision-date-localized:
+      type: timeago
+      fallback_to_build_date: true
+  - minify:
+      minify_html: true
+  - redirects:
+      redirect_maps: {}
+  - material/blog:
+      blog_dir: .
+      blog_toc: true
+      post_excerpt: required
+      post_date_format: short
+      post_readtime: true
+      post_readtime_words_per_minute: 300
+      authors_profiles: true
+      pagination_per_page: 5
+      categories_pagination_per_page: 10
+      categories_allowed:
+        - devops
+        - cloud
+extra:
+  social:
+  - icon: /fontawesome/regular/envelope
+    name: send me an email
+    link: mailto:<example@email.com>
+
+  - icon: fontawesome/brands/github
+    name: github profile
+    link: https://github.com/<username>
